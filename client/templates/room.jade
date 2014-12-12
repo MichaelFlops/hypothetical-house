@@ -9,11 +9,7 @@ template(name="room")
         //- Setting the state string in the classes will indicate, via css, if a user is online or idle!
         span(class='label label-default #{state}') #{data.username}
 
-    //- Create message form
-    form.input-group(data-action="create-message")
-      input.form-control(data-value="create-message" placeholder="New message")
-      span.input-group-btn
-        input.btn.btn-default(type="submit" value="Send")
+
 
     //- Display messages. This will update automatically because of reactive collection data.
     #messages-container.well
@@ -22,6 +18,11 @@ template(name="room")
           each messages
             .message
               label.username #{username}:
-              span.content #{content}
+              span.content Hypothetically #{content}
       else
         .message No messages yet
+    //- Create message form
+    form.input-group(data-action="create-message")
+      input.form-control(data-value="create-message" placeholder="New message")
+      span.input-group-btn
+        input.btn.btn-default(type="submit" value="Send")

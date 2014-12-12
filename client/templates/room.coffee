@@ -12,7 +12,7 @@ Template.room.helpers
   # Find the messages in the room by room id.
   # Like UserPresences, the Messages collection subscribed to only contains messages associated with the current roomId.
   messages : ->
-    Messages.find {}, sort : creation_date : 'desc'
+    Messages.find {}, creation_date : 'desc'
 
 # Template events
 Template.room.events =
